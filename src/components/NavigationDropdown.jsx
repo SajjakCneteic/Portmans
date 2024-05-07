@@ -101,7 +101,8 @@ const NavigationDropdown = () => {
                 {data.extraData?.map((el, index) => <div
                     onMouseEnter={() => document.getElementById(`${el.name}`).style.display = 'block'}
                     onMouseLeave={() => document.getElementById(`${el.name}`).style.display = 'none'}
-                    key={index}><a href="" style={{textTransform:'uppercase',textDecoration:'none',color:'#333',color:`${el.name=='SALE'?'red':'black'}`}}>{el.name}</a>
+                    key={index}><a href="" style={{textTransform:'uppercase'
+                    ,textDecoration:'none',color:`${el.name=='SALE'?'red':'#333'}`}}>{el.name}</a>
                     <DropDownHover childrenData={el} />
                 </div>)}
             </Container>
