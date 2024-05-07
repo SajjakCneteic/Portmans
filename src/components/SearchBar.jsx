@@ -70,11 +70,11 @@ const SearchBar = () => {
         </SearchButton>
       )}
       <LogoContainer>
-        <img alt="" src="./PortmonLogo.png" style={{ height: "28px", width: "198.4px" }} />
+        <img alt="portmans" src="./PortmonLogo.png" style={{ height: "28px", width: "198.4px" }} />
       </LogoContainer>
       <SvgContainer>
         <PersonImg
-          alt=""
+          alt="User"
           src="/svg-8.svg"
           onMouseOver={toggleDropdown}
           onClick={toggleDropdown}
@@ -86,8 +86,8 @@ const SearchBar = () => {
             ))}
           </DropdownMenu>
         )}
-        <img alt="" src="/svg-9.svg" />
-        <img alt="" src="/shopping-cart.svg" />
+        <img alt="fevorite" src="/svg-9.svg" />
+        <img alt="shopping-cart" src="/shopping-cart.svg" />
       </SvgContainer>
     </ContainerRoot>
   );
@@ -112,6 +112,7 @@ const ContainerRoot = styled.header`
   font-size: 14px;
   color: #333333;
   font-family: "Inter Bold", sans-serif;
+  
 `;
 
 const SearchButton = styled.div`
@@ -194,6 +195,7 @@ const SearchContainer = styled.div`
     display: none;
     margin-bottom: 10px;
   }
+ 
 `;
 
 const DropdownMenu = styled.div`
