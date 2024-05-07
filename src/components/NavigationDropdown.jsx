@@ -9,9 +9,9 @@ const Container = styled.div`
    
     display: flex;
     justify-content:center;
-    gap:20px;
+    gap:30px;
     letter-spacing:0.5px;
-    font-size: 17px;
+    font-size: 15px;
     @media(max-width: 1024px){
         display: none;
     }
@@ -20,6 +20,7 @@ const Container = styled.div`
 const MainContainer = styled.div`
   width:100%;
   margin: auto;
+  border-bottom:1px solid #7c7c7c;
   /* border:1px solid red; */
   /* display: flex; */
   /* justify-content: center; */
@@ -57,6 +58,7 @@ const DropDown = styled.div`
     left: 0;
     display: flex;
     justify-content: space-between;
+   
     .imagecontainer{
         width: 50%;
         height: 100%;
@@ -82,14 +84,14 @@ const NavigationDropdown = () => {
         const fetchData = async () => {
             try {
                 const response = await axios.get(url);
-                setData(response.data); // Update state with the received data
+                setData(response.data); 
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
-        fetchData(); // Call the asynchronous function immediately
-    }, [url]); // Add url as a dependency if it's a variable from outside the useEffect
+        fetchData(); 
+    }, [url]); 
 
 
 
@@ -99,7 +101,7 @@ const NavigationDropdown = () => {
                 {data.extraData?.map((el, index) => <div
                     onMouseEnter={() => document.getElementById(`${el.name}`).style.display = 'block'}
                     onMouseLeave={() => document.getElementById(`${el.name}`).style.display = 'none'}
-                    key={index}><a href="" style={{textTransform:'uppercase',textDecoration:'none',color:'#333'}}>{el.name}</a>
+                    key={index}><a href="" style={{textTransform:'uppercase',textDecoration:'none',color:'#333',color:`${el.name=='SALE'?'red':'black'}`}}>{el.name}</a>
                     <DropDownHover childrenData={el} />
                 </div>)}
             </Container>
@@ -119,7 +121,7 @@ const DropDownHover = ({ childrenData }) => {
             style={{ display: 'none', }}
             id={childrenData.name}
         >
-            <div style={{ display: 'flex', padding:'50px',justifyContent:'center'}}>
+            <div style={{ display: 'flex', padding:'50px',justifyContent:'center',}}>
                 <ListItem style={{  display:`${childrenData?.image?.[0]?'block':'flex'}`,gap:`${childrenData?.image?.[0]?'0px':'100px'}`
                
                
@@ -127,7 +129,7 @@ const DropDownHover = ({ childrenData }) => {
                     {childrenData?.children?.map((el, index) => (
                         <div key={index} >
                             <ul>
-                                <li>{el.name}</li>
+                                <li >{el.name}</li>
                                 <ul>
                                     {el.children?.map((child, i) => (
                                         <li key={i}>{child.name}</li>
@@ -137,7 +139,7 @@ const DropDownHover = ({ childrenData }) => {
                         </div>
                     ))}
                 </ListItem>
-                {childrenData?.image &&  <div style={{border:'1px solid #333',margin:'50px',marginLeft:'150px'}}></div>}
+                {childrenData?.image &&  <div style={{border:'1px solid #7c7c7c',margin:'50px',marginLeft:'150px'}}></div>}
                
                 {childrenData?.image &&
                     <div className="imagecontainer" style={{cursor:'pointer'}}>
