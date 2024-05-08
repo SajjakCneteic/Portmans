@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import OpenHumburger from './OpenHumburger';
 
 const DROPDOWN_LINKS = [
   { text: 'Sign In', href: '#' },
@@ -12,6 +13,7 @@ const SearchBar = () => {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
   const [showSearchInput, setShowSearchInput] = useState(false);
   const [selectedOption, setSelectedOption] = useState(null);
+ console.log(isOpen)
 
   const toggleDropdown = () => {
     setIsDropdownVisible(!isDropdownVisible);
@@ -27,6 +29,7 @@ const SearchBar = () => {
   };
 
   return (
+    <>
     <ContainerRoot>
       <HamburgerIcon>
         <div>
@@ -90,6 +93,8 @@ const SearchBar = () => {
         <img alt="shopping-cart" src="/shopping-cart.svg" />
       </SvgContainer>
     </ContainerRoot>
+    <OpenHumburger drawer={isOpen} setDrawer={setIsOpen}/>
+    </>
   );
 };
 

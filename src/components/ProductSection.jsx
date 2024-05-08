@@ -2,7 +2,7 @@ import React from 'react'
 
 const ProductSection = () => {
   return (
-    <div>ProductSection</div>
+    <div style={{height:'100vh',backgroundColor:'teal'}}>ProductSection</div>
   )
 }
 
