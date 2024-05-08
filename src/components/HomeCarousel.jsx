@@ -48,6 +48,8 @@ const HomeCarousel = () => {
 export default HomeCarousel;
 
 const DivCrousel = styled.div`
+
+  
 .carousel {
   position: relative;
   overflow: hidden;

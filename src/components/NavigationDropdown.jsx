@@ -20,6 +20,7 @@ const Container = styled.div`
 const MainContainer = styled.div`
   width:100%;
   margin: auto;
+
   border-bottom:1px solid #7c7c7c;
   /* border:1px solid red; */
   /* display: flex; */
@@ -50,6 +51,7 @@ const ListItem = styled.div`
 `;
 
 const DropDown = styled.div`
+    background-color: white;
     position: absolute;
     padding:5px 100px; 
     box-sizing: border-box;
@@ -58,7 +60,7 @@ const DropDown = styled.div`
     left: 0;
     display: flex;
     justify-content: space-between;
-   
+    z-index: 100;
     .imagecontainer{
         width: 50%;
         height: 100%;

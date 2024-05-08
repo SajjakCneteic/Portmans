@@ -9,7 +9,7 @@ const HomePage = () => {
   return (
     <div>
 <HomeCarousel/>
-<ProductSection/>
+<ProductSection />
     </div>
   )
 }
